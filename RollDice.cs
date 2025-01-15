@@ -7,6 +7,7 @@ namespace DiceMission2
             // Allow for use of random numbers
             Random random = new Random();
 
+            // Use an empty dictionary to store the counts of each number rolled
             System.Collections.Generic.Dictionary<int, int> counts = new Dictionary<int, int>
             {
                 { 2, 0 },
@@ -21,7 +22,6 @@ namespace DiceMission2
                 { 11, 0 },
                 { 12, 0 }
             };
-            Console.WriteLine("Rolling dice");
 
             for (int i = 0; i < rolls; i++)
             {
@@ -30,14 +30,16 @@ namespace DiceMission2
 
                 int value = dice1 + dice2;
                 
+                // Increment the value in the dictionary by one each time it is rolled
                 counts[value]++;
             }
             
-            // Create a list to iterate over the 
+            // Create a list to iterate over the dictionary keys
             List<int> keys = new List<int>(counts.Keys);
 
             foreach(var key in keys)
             {
+                // Must convert to a double and round to avoid truncation
                 counts[key] = (int)Math.Round(((double)counts[key] / rolls) * 100);
             }
 

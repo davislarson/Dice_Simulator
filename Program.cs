@@ -22,13 +22,15 @@ internal class Program
         Console.WriteLine("Each \"*\" represents 1% of the total number of rolls.");
         Console.WriteLine("Total number of rolls " + rolls);
 
+        // Set up a dictionary to receive the roll stats
         Dictionary<int,int> numbers = rd.Roll(rolls);
         
         
-        
+        // Loop to display frequency of each number rolled
         for (int i = 2; i < 13; i++)
         {
             Console.Write(i + ": ");
+            // Add a star for each percentage point
             for (int j = 1; j < numbers[i] ; j++)
             {
                 Console.Write("*");
