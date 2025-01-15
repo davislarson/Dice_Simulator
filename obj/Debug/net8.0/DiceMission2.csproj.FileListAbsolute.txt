@@ -12,3 +12,4 @@
 /Users/davislarson/RiderProjects/DiceMission2/obj/Debug/net8.0/DiceMission2.pdb
 /Users/davislarson/RiderProjects/DiceMission2/obj/Debug/net8.0/DiceMission2.genruntimeconfig.cache
 /Users/davislarson/RiderProjects/DiceMission2/obj/Debug/net8.0/ref/DiceMission2.dll
+/Users/davislarson/RiderProjects/DiceMission2/obj/Debug/net8.0/DiceMission2.sourcelink.json
