@@ -8,7 +8,7 @@ namespace DiceMission2
             Random random = new Random();
 
             // Use an empty dictionary to store the counts of each number rolled
-            int[] counts = new int[11];
+            int[] counts = new int[13];
 
             for (int i = 0; i < rolls; i++)
             {
@@ -18,10 +18,11 @@ namespace DiceMission2
                 int value = dice1 + dice2;
                 
                 // Increment the value in the dictionary by one each time it is rolled
-                counts[(value-2)]++;
+                counts[value]++;
             }
-
-            for (int i = 0; i < counts.Length; i++)
+            
+            for (int i = 2; i < counts.Length; i++)
+                
             {
                 // Must convert to a double and round to avoid truncation
                 counts[i] = (int)Math.Round(((double)counts[i] / rolls) * 100);
