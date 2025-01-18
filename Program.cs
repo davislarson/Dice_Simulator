@@ -23,7 +23,7 @@ internal class Program
         Console.WriteLine("Total number of rolls " + rolls);
 
         // Set up a dictionary to receive the roll stats
-        Dictionary<int,int> numbers = rd.Roll(rolls);
+        int[] numbers = rd.Roll(rolls);
         
         
         // Loop to display frequency of each number rolled
@@ -31,7 +31,7 @@ internal class Program
         {
             Console.Write(i + ": ");
             // Add a star for each percentage point
-            for (int j = 1; j < numbers[i] ; j++)
+            for (int j = 0; j < numbers[i] ; j++)
             {
                 Console.Write("*");
             }

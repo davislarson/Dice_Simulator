@@ -2,26 +2,13 @@ namespace DiceMission2
 {
     public class RollDice
     {
-        public Dictionary<int, int> Roll(int rolls)
+        public int[] Roll(int rolls)
         {
             // Allow for use of random numbers
             Random random = new Random();
 
             // Use an empty dictionary to store the counts of each number rolled
-            System.Collections.Generic.Dictionary<int, int> counts = new Dictionary<int, int>
-            {
-                { 2, 0 },
-                { 3, 0 },
-                { 4, 0 },
-                { 5, 0 },
-                { 6, 0 },
-                { 7, 0 },
-                { 8, 0 },
-                { 9, 0 },
-                { 10, 0 },
-                { 11, 0 },
-                { 12, 0 }
-            };
+            int[] counts = new int[11];
 
             for (int i = 0; i < rolls; i++)
             {
@@ -31,16 +18,13 @@ namespace DiceMission2
                 int value = dice1 + dice2;
                 
                 // Increment the value in the dictionary by one each time it is rolled
-                counts[value]++;
+                counts[(value-2)]++;
             }
-            
-            // Create a list to iterate over the dictionary keys
-            List<int> keys = new List<int>(counts.Keys);
 
-            foreach(var key in keys)
+            for (int i = 0; i < counts.Length; i++)
             {
                 // Must convert to a double and round to avoid truncation
-                counts[key] = (int)Math.Round(((double)counts[key] / rolls) * 100);
+                counts[i] = (int)Math.Round(((double)counts[i] / rolls) * 100);
             }
 
             return counts;
